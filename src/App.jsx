@@ -7,6 +7,8 @@ import Contact from './components/common/Contact';
 import FAQ from './components/common/FAQ';
 import Documents from './components/common/Documents';
 import Process from './components/common/Process';
+import Login from '../src/components/features/auth/Login'
+import Signup from '../src/components/features/auth/Signup'
 
 function App() {
     return (
@@ -47,10 +49,10 @@ function App() {
                             </ul>
                             <ul className="navbar-nav ms-auto">
                                 <li className="nav-item">
-                                    <button className="btn btn-outline-light me-2">Login</button>
+                                    <NavLink className="btn btn-outline-light me-2" to="/Login">Login</NavLink>
                                 </li>
-                                <li className="nav-item">
-                                    <button className="btn btn-primary">Register</button>
+                                <li className="nav-item">                                    
+                                    <NavLink className="btn btn-primary" to="/Signup">Sign up</NavLink>                                    
                                 </li>
                             </ul>
                         </div>
@@ -79,6 +81,8 @@ function App() {
                     <Route path="/documents" element={<Documents />} />
                     <Route path="/faq" element={<FAQ />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/Login" element={<Login />} />
+                    <Route path="/Signup" element={ <Signup/>}/>
                 </Routes>
 
                 <Footer />
