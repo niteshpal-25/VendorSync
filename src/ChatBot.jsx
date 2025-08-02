@@ -2,9 +2,9 @@ import React, { useState } from "react";
 
 function ChatBot({ onClose }) {
   const [messages, setMessages] = useState([
-    { from: "bot", text: "Hi! Welcome to BotPenguin. I’ll be assisting you here today." },
-    { from: "bot", text: "How can I help you today?" }
+    { from: "Todo App", text: "How can I help you today?" }
   ]);
+  
   const [input, setInput] = useState("");
 
   const sendMessage = () => {
@@ -20,7 +20,7 @@ function ChatBot({ onClose }) {
   return (
     <div className="chatbot-window shadow">
       <div className="chatbot-header d-flex justify-content-between align-items-center">
-        <span>🤖 BotPenguin</span>
+        <span>🤖 ToDo App</span>
         <button className="btn-close btn-sm" onClick={onClose}></button>
       </div>
 
@@ -42,7 +42,7 @@ function ChatBot({ onClose }) {
           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
         />
         <span className="send-icon" onClick={sendMessage}>
-          📤
+          ➤
         </span>
       </div>
     </div>

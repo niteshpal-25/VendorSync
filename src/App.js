@@ -1,22 +1,20 @@
-import React, { useState } from "react";
-import ChatBot from "./ChatBot";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LoginForm from './LoginForm';
+import BuyerDashboard from './BuyerDashboard';
+import SellerDashboard from './SellerDashboard';
+import SignUp from './SignUp';
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <div className="App">
-      <button
-        className="btn btn-primary chatbot-button"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        💬
-      </button>
-
-      {isOpen && <ChatBot onClose={() => setIsOpen(false)} />}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginForm />} />
+        <Route path="/buyer" element={<BuyerDashboard />} />
+        <Route path="/seller" element={<SellerDashboard />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+    </Router>
   );
 }
 
